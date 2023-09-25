@@ -10,18 +10,14 @@ const cekHariKerja = (day) => {
             } else {
                 reject(new Error('Hari ini bukan hari kerja'))
             }
-        }), 3000
+        }, 3000) // Perbaikan: memindahkan tanda kurung ke kanan dari `3000` ke dalam setTimeout
     })
 }
 
-try {
-    cekHariKerja('senin')
-        .then((result) => {
-            console.log(`Hari ${result} adalah hari kerja. `)
-        })
-        .catch((error) => {
-            console.error(error.message)
-        })
-} catch (error) {
-    console.error(error.message)
-}
+cekHariKerja('senin')
+    .then((result) => {
+        console.log(`Hari ${result} adalah hari kerja. `)
+    })
+    .catch((error) => {
+        console.error(error.message)
+    })
